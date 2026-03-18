@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* 1. Объявляем шрифты */
 @font-face {
   font-family: "Inter";
   src: url("assets/fonts/Inter_18pt-Regular.ttf") format("truetype");
@@ -32,7 +31,6 @@
   font-display: swap;
 }
 
-/* 4. Базовые стили */
 body {
   margin: 0;
   padding: 0;
@@ -58,24 +56,23 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 20px;
+  padding: 0;
 }
 
 .os-modal-container {
   background: #eff1f5;
   width: 100%;
-  max-width: 500px;
+  max-width: 599px;
   border-radius: 8px;
-  padding: 20px 12px;
+  padding: 12px;
   position: relative;
   -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Кнопка закрытия */
 .os-modal-close {
   position: absolute;
-  top: 20px;
+  top: 8px;
   right: 0px;
   background: none;
   border: none;
@@ -118,14 +115,13 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ФОРМА */
 .os-form {
   /* Текстовые инпуты */
   /* ОБЩИЕ стили Select для всех состояний */
 }
 
 .os-form .os-input-group {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .os-form .os-input {
@@ -228,6 +224,10 @@ body {
   color: #cac6c6;
 }
 
+.os-form .os-select-fz-18 {
+  font-size: 18px;
+}
+
 .os-form .os-dynamic-group {
   display: none;
 }
@@ -290,7 +290,7 @@ body {
 }
 
 .os-modal-footer {
-  margin-top: 30px;
+  margin-top: 16px;
 }
 
 .os-modal-footer .os-security-info {
@@ -301,7 +301,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   color: #515150;
   font-style: italic;
 }
@@ -316,11 +316,38 @@ body {
           animation: fadeIn 0.4s ease-in-out forwards;
 }
 
+.os-input.os-error,
+.os-select-wrapper.os-error {
+  border-color: #ff4d4d !important;
+}
+
+.os-error-text {
+  color: #ff4d4d;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+  -webkit-animation: fadeIn 0.3s ease;
+          animation: fadeIn 0.3s ease;
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
   }
   to {
     opacity: 1;
@@ -339,6 +366,183 @@ body {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@media (max-width: 1280px) {
+  .os-modal-overlay {
+    padding: 0;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .os-modal-overlay {
+    padding: 0;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    overflow-y: auto;
+  }
+  .os-modal-container {
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 0;
+    margin: 0 auto;
+  }
+  .os-form .os-input-group {
+    margin-bottom: 12px;
+  }
+  .os-modal-header {
+    margin-bottom: 10px;
+  }
+  .os-modal-header .os-title {
+    margin: 0 0 12px 0;
+  }
+  .os-form .os-dynamic-group .os-input-group:last-child {
+    margin-bottom: 18px;
+  }
+  .os-modal-footer {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .os-modal-overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+  }
+  .os-modal-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 8px;
+    position: relative;
+    padding: 20px;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  .os-modal-header .os-title {
+    font-size: 24px;
+  }
+  .os-modal-header .os-subtitle {
+    font-size: 18px;
+  }
+  .os-form .os-input,
+  .os-form .os-select {
+    font-size: 18px;
+  }
+  .os-form .os-submit-btn {
+    font-size: 18px;
+    padding: 12px 48px;
+  }
+  .os-modal-footer .os-security-info {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .os-modal-overlay {
+    padding: 0;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .os-modal-container {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+    padding: 40px 16px 24px 16px;
+    border-radius: 0;
+    overflow-y: auto;
+  }
+  .os-modal-header {
+    margin-bottom: 20px;
+  }
+  .os-modal-header .os-title {
+    font-size: 20px;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .os-modal-header .os-subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .os-form .os-input-group {
+    margin-bottom: 16px;
+  }
+  .os-form .os-input,
+  .os-form .os-select {
+    font-size: 16px;
+    padding: 8px 0 8px 8px;
+  }
+  .os-form .os-select-fz-18 {
+    font-size: 15px;
+  }
+  .os-form .os-submit-btn {
+    width: 100%;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  .os-modal-footer {
+    margin-top: 16px;
+  }
+  .os-modal-footer .os-security-info {
+    font-size: 12px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .os-modal-footer .os-security-info .os-icon-lock {
+    width: 14px;
+    margin-right: 8px;
+  }
+  .os-modal-close {
+    top: 12px;
+    right: 12px;
+  }
+  .os-modal-close svg {
+    width: 24px;
+    height: 24px;
+  }
+  .os-form .os-select-icon {
+    right: 3px;
+    height: 9px;
+  }
+  .os-form .os-select-fz-18 {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .os-form .os-input,
+  .os-form .os-select {
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 40px;
+  }
+  .os-form .os-submit-btn {
+    font-size: 16px;
+    padding: 14px;
   }
 }
 /*# sourceMappingURL=style.css.map */
