@@ -71,19 +71,61 @@
 				</div>
 
 				<div id="os-dynamic-fields-container">
-					<div class="os-input-group os-dynamic-field os-active">
-						<div class="os-select-wrapper">
-							<svg class="os-select-icon" width="22" height="12" viewBox="0 0 22 12" fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path d="M21 1L11 11L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-									stroke-linejoin="round" />
-							</svg>
-							<select class="os-select" name="income_vs_debt" id="os-income-debt" required>
-								<option value="" disabled selected>Ali je višina vaših dohodkov večja kot vaše dolgove</option>
-								<option value="level">Ali je višina vaših dohodkov večja kot vaše dolgove</option>
-								<option value="yes">Da</option>
-								<option value="no">Ne</option>
-							</select>
+					<div id="os-fields-unemployed" class="os-dynamic-group">
+						<div class="os-input-group">
+							<div class="os-select-wrapper">
+								<svg class="os-select-icon" width="22" height="12" viewBox="0 0 22 12" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 1L11 11L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								<select class="os-select" name="income_vs_debt" required>
+									<option value="" disabled selected>Ali je višina vaših dohodkov večja kot vaše dolgove
+									</option>
+									<option value="yes">Da</option>
+									<option value="no">Ne</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div id="os-fields-employed" class="os-dynamic-group os-active">
+						<div class="os-input-group">
+							<div class="os-select-wrapper">
+								<svg class="os-select-icon" width="22" height="12" viewBox="0 0 22 12" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 1L11 11L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								<select class="os-select" name="debt_triple_income" required>
+									<option value="" disabled selected>Ali so vaši dolgovi večji ali enaki TRIKRATNIKU vaših
+										dohodkov</option>
+									<option value="yes">Da</option>
+									<option value="no">Ne</option>
+								</select>
+							</div>
+						</div>
+						<div class="os-input-group">
+							<div class="os-select-wrapper">
+								<svg class="os-select-icon" width="22" height="12" viewBox="0 0 22 12" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M21 1L11 11L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								<select class="os-select" name="call_office" required>
+									<option value="" disabled selected>Izberite poslovanstvo iz katere želite klic</option>
+									<option value="ljubljana">Ljubljana</option>
+									<option value="maribor">Maribor</option>
+									<option value="nova-gorica">Nova Gorica</option>
+									<option value="kranj">Kranj</option>
+									<option value="velenje">Velenje</option>
+									<option value="morska-sobota">Morska Sobota</option>
+									<option value="koper">Koper</option>
+									<option value="kocevje">Kočevje</option>
+									<option value="novo-mesto">Novo Mesto</option>
+									<option value="celije">Celije</option>
+								</select>
+							</div>
 						</div>
 					</div>
 				</div>

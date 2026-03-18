@@ -32,8 +32,6 @@
   font-display: swap;
 }
 
-/* 2. Переменные */
-/* 3. Миксин для плавности */
 /* 4. Базовые стили */
 body {
   margin: 0;
@@ -124,8 +122,6 @@ body {
 .os-form {
   /* Текстовые инпуты */
   /* ОБЩИЕ стили Select для всех состояний */
-  /* Стили для динамических полей (как на скриншотах) */
-  /* Кнопка */
 }
 
 .os-form .os-input-group {
@@ -205,9 +201,9 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 20px;
-  appearance: none;
-  -webkit-appearance: none;
   -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
   background-color: #ffffff;
   border: 1px solid #cac6c6;
   border-radius: 4px;
@@ -217,10 +213,6 @@ body {
   outline: none;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  /**
-       * !!! МАГИЯ СЕРЫХ ПЛЕЙСХОЛДЕРОВ !!!
-       * Чтобы это работало, в HTML обязательно должен быть атрибут required
-       */
 }
 
 .os-form .os-select:invalid {
@@ -234,6 +226,20 @@ body {
 
 .os-form .os-select option[disabled] {
   color: #cac6c6;
+}
+
+.os-form .os-dynamic-group {
+  display: none;
+}
+
+.os-form .os-dynamic-group.os-active {
+  display: block;
+  -webkit-animation: fadeIn 0.4s ease-in-out forwards;
+          animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.os-form .os-dynamic-group .os-input-group:last-child {
+  margin-bottom: 24px;
 }
 
 .os-form .os-select-icon {
@@ -305,7 +311,6 @@ body {
   margin-right: 10px;
 }
 
-/* Анимация появления */
 .os-fade-in {
   -webkit-animation: fadeIn 0.4s ease-in-out forwards;
           animation: fadeIn 0.4s ease-in-out forwards;
