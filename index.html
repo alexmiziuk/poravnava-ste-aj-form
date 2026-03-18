@@ -55,14 +55,13 @@
 				</div>
 
 				<div class="os-input-group">
-
 					<div class="os-select-wrapper">
 						<svg class="os-select-icon" width="22" height="12" viewBox="0 0 22 12" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
 							<path d="M21 1L11 11L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
 								stroke-linejoin="round" />
 						</svg>
-						<select class="os-select" name="job_status" id="os-job-status">
+						<select class="os-select" name="job_status" id="os-job-status" required>
 							<option value="" disabled selected>Status zaposlitve</option>
 							<option value="status">Status zaposlitve</option>
 							<option value="employed">Zaposlen</option>
@@ -71,7 +70,23 @@
 					</div>
 				</div>
 
-				<div id="os-dynamic-fields-container"></div>
+				<div id="os-dynamic-fields-container">
+					<div class="os-input-group os-dynamic-field os-active">
+						<div class="os-select-wrapper">
+							<svg class="os-select-icon" width="22" height="12" viewBox="0 0 22 12" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M21 1L11 11L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+							<select class="os-select" name="income_vs_debt" id="os-income-debt" required>
+								<option value="" disabled selected>Ali je višina vaših dohodkov večja kot vaše dolgove</option>
+								<option value="level">Ali je višina vaših dohodkov večja kot vaše dolgove</option>
+								<option value="yes">Da</option>
+								<option value="no">Ne</option>
+							</select>
+						</div>
+					</div>
+				</div>
 
 				<button type="submit" class="os-submit-btn">Oddaj povpraševanje</button>
 			</form>
