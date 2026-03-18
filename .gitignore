@@ -1,0 +1,54 @@
+# Node modules
+node_modules/
+
+# Build / dist
+dist/
+build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.tmp/
+
+# WordPress (если работаешь внутри темы)
+wp-admin/
+wp-includes/
+wp-content/uploads/
+
+# Optional: ignore entire wp-content except your theme
+# wp-content/*
+# !wp-content/themes/
+# !wp-content/themes/your-child-theme/
+
+# ZIP / exports
+*.zip
+
+# Coverage
+coverage/
+
+# Mac system files
+.AppleDouble
+.LSOverride
