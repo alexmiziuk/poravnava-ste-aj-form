@@ -1,5 +1,44 @@
 document.addEventListener('DOMContentLoaded', function () {
 	const form = document.getElementById('os-stecaj-form');
+	const modalOverlay = document.querySelector('.os-modal-overlay');
+	const closeBtn = document.querySelector('.os-modal-close');
+	
+	function closeModal() {
+      if (modalOverlay) {
+         modalOverlay.classList.add('os-hidden');
+         setTimeout(() => {
+            if (form) {
+               form.reset();
+               // Если есть функция сброса динамических полей и ошибок:
+               // resetDynamicFields(); 
+               // removeAllErrors(); 
+            }
+         }, 300);
+      }
+   }
+
+   if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+         e.preventDefault();
+         closeModal();
+      });
+   }
+
+   // Закрытие по клику на фон
+   if (modalOverlay) {
+      modalOverlay.addEventListener('click', (e) => {
+         if (e.target === modalOverlay) {
+            closeModal();
+         }
+      });
+   }
+   
+   document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modalOverlay.classList.contains('os-hidden')) {
+         closeModal();
+      }
+   });
+
 	if (!form) return;
 
 	form.setAttribute('novalidate', 'true');
@@ -7,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const jobStatusSelect = document.getElementById('os-job-status');
 	const fieldsEmployed = document.getElementById('os-fields-employed');
 	const fieldsUnemployed = document.getElementById('os-fields-unemployed');
+	
 
 	function resetDynamicFields() {
 		[fieldsEmployed, fieldsUnemployed].forEach(group => {

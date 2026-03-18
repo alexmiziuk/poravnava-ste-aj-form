@@ -302,6 +302,18 @@ body {
 	animation: fadeIn 0.3s ease;
 }
 
+.os-modal-overlay {
+   transition: opacity 0.3s ease, visibility 0.3s ease;
+   opacity: 1;
+   visibility: visible;
+}
+
+.os-modal-overlay.os-hidden {
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none; /* Чтобы нельзя было кликнуть по невидимой форме */
+}
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;
